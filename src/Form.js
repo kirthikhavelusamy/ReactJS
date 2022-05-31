@@ -1,12 +1,13 @@
 import './Form.css';
 import {useState} from 'react';
-function Form(){
+function Form(props){
     const[getForm,setForm]  = useState({
         fullName:'salman',
         age:22
     })
     const onSubmitHandler=()=>{
-        alert("submit");
+        // alert("submit");
+        props.callDetails(getForm.fullName,getForm.age)
     }
     const OnChangeHandler=(event)=>{
         console.log(event.target.value);
